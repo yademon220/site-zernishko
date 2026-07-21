@@ -98,6 +98,7 @@ a {
     background: rgba(162, 101, 57, 1);
     color: rgba(255, 255, 255, 1);
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .top {
@@ -262,6 +263,7 @@ a {
     background: rgba(162, 101, 57, 1);
     color: rgba(255, 255, 255, 1);
     transition: 0.4s;
+    cursor: pointer;
 }
 
 
@@ -823,6 +825,13 @@ a {
     font-size: 14px;
     font-weight: 600;
     line-height: 17px;
+}
+
+.reservation__form-button:hover {
+    background: rgba(162, 101, 57, 1);
+    color: rgba(255, 255, 255, 1);
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .map {

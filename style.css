@@ -1,23 +1,28 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;}
+    box-sizing: border-box;
+}
 
 body {
-    font-family: "Montserrat Alternates", "Montserrat",sans-serif;
+    font-family: "Montserrat Alternates", "Montserrat", sans-serif;
     font-style: normal;
-    font-size: 16px;}
+    font-size: 16px;
+}
 
-a, input, button {
-  font-family: inherit;
+a,
+input,
+button {
+    font-family: inherit;
 }
 
 a {
     text-decoration: none;
-    color: rgba(32, 32, 39, 1);}
+    color: rgba(32, 32, 39, 1);
+}
 
 .preserve-lines {
-  white-space: pre-line;
+    white-space: pre-line;
 }
 
 .font-montserrat {
@@ -97,24 +102,24 @@ a {
 
 .top {
     padding-top: 120px;
-    height: 100vh;    
+    height: 100vh;
     background-color: rgba(246, 245, 244, 1);
     background-size: auto;
     box-sizing: border-box;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
 }
 
-.image-podnos{
+.image-podnos {
     position: absolute;
     top: 100px;
     right: -320px;
     z-index: 100;
-    width: 1197px;  
+    width: 1197px;
     height: 853px;
     background: url('./img/podnos.png') no-repeat;
     background-size: contain;
-    background-position: center; 
+    background-position: center;
 }
 
 .image-coffee {
@@ -122,20 +127,20 @@ a {
     top: 100px;
     right: 230px;
     z-index: 999;
-    width: 541px;  
+    width: 541px;
     height: 541px;
     background: url('./img/Coffee.png') no-repeat;
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     transition: transform 0.3s ease;
 }
 
 .image-coffee img {
-  display: block;
+    display: block;
 }
 
 .image-coffee:hover {
-  transform: rotate(-10deg);
+    transform: rotate(-10deg);
 }
 
 .image-cinnamon {
@@ -143,20 +148,20 @@ a {
     top: 330px;
     right: -60px;
     z-index: 999;
-    width: 570px;  
+    width: 570px;
     height: 570px;
     background: url('./img/Cinnamon.png') no-repeat;
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     transition: transform 0.3s ease;
 }
 
 .image-cinnamon img {
-  display: block;
+    display: block;
 }
 
 .image-cinnamon:hover {
-  transform: rotate(-16deg);
+    transform: rotate(-16deg);
 }
 
 .image-grains {
@@ -164,16 +169,16 @@ a {
     top: 180px;
     right: 95px;
     z-index: 999;
-    width: 271px;  
+    width: 271px;
     height: 271px;
     background: url('./img/Зерна.png') no-repeat;
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     transition: transform 0.3s ease;
 }
 
 .image-grains img {
-  display: block;
+    display: block;
 }
 
 .image-cookie {
@@ -181,20 +186,20 @@ a {
     top: 500px;
     right: 380px;
     z-index: 999;
-    width: 394px;  
+    width: 394px;
     height: 395px;
     background: url('./img/печенье.png') no-repeat;
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     transition: transform 0.3s ease;
 }
 
 .image-cookie img {
-  display: block;
+    display: block;
 }
 
 .image-cookie:hover {
-  transform: rotate(-18deg);
+    transform: rotate(-18deg);
 }
 
 
@@ -259,8 +264,175 @@ a {
     transition: 0.4s;
 }
 
+
+
+
+
+
+
+
+
+/* МОДАЛЬНОЕ ОКНО СВЯЗАТЬСЯ */
+/* Подложка (затемнение фона) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Изначально скрыто для анимации */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Класс, который JS будет добавлять для показа окна */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Само модальное окно */
+.modal-window {
+    background: #FFFBF7; /* Мягкий молочный фон */
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    box-sizing: border-box;
+    
+    /* Анимация вылета */
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-window {
+    transform: translateY(0);
+}
+
+/* Кнопка Закрыть (крестик) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #A26539;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Заголовок модального окна */
+.modal-header h2 {
+    color: #45403D;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.modal-header p {
+    color: #7A706B;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+/* Поля формы */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #A26539;
+}
+.form-group input {
+    height: 45px;
+    border: 1px solid #E6DFDA;
+    border-radius: 12px;
+    padding: 0 16px;
+    background: #FFF;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-group input:focus {
+    border-color: #A26539;
+}
+
+/* Кофейное настроение (Радиокнопки в виде вкладок) */
+.coffee-mood-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+.mood-tab input {
+    display: none; /* Скрываем стандартный кружок */
+}
+.mood-tab span {
+    display: block;
+    padding: 10px 16px;
+    background: #F6F5F4;
+    border: 1px solid #E6DFDA;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #45403D;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.mood-tab input:checked + span {
+    background: #EEDCD0;
+    border-color: #A26539;
+    font-weight: bold;
+}
+
+/* Кнопка отправки */
+.modal-submit-btn {
+    height: 50px;
+    background: #A26539;
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+.modal-submit-btn:hover {
+    background: #87512B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* О НАС */
 .aboutUs {
-    height: 100vh;    
+    height: 100vh;
     background-color: rgba(246, 245, 244, 1);
 }
 
@@ -301,16 +473,24 @@ a {
 }
 
 .part-1 {
-  display: inline-block;
-  margin-bottom: 7px;
+    display: inline-block;
+    margin-bottom: 7px;
 }
 
 .part-2 {
-  display: inline-block;
+    display: inline-block;
 }
 
+
+
+
+
+
+
+
+/* ==================== МЕНЮ ==================== */
+
 .menu {
-    /* height: 100vh;     */
     background-color: rgba(246, 245, 244, 1);
     padding-bottom: 64px;
 }
@@ -319,6 +499,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center; /* Выравниваем заголовок и кнопки по центру */
 }
 
 .menu__buttons {
@@ -328,9 +509,10 @@ a {
     padding-top: 64px;
 }
 
+/* Базовые стили кнопок */
 .button-menu {
     width: 120px;
-    height: 45px; 
+    height: 45px;
     box-sizing: border-box;
     border: 1px solid rgba(162, 101, 57, 1);
     border-radius: 24px;
@@ -339,40 +521,66 @@ a {
     font-size: 14px;
     font-weight: 600;
     line-height: 17px;
-
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* Эффект при наведении */
 .button-menu:hover {
-    box-sizing: border-box;
-    border: 1px solid rgba(162, 101, 57, 1);
-    border-radius: 24px;
     background: rgba(162, 101, 57, 1);
     color: rgba(255, 255, 255, 1);
 }
 
-.button-menu:focus  {
-    box-sizing: border-box;
-    border: 1px solid rgba(162, 101, 57, 1);
-    border-radius: 24px;
-    background: rgba(162, 101, 57, 1);
-    color: rgba(255, 255, 255, 1);
+/* СТИЛЬ АКТИВНОЙ КНОПКИ (добавлен !important, чтобы перебить стандартный :focus) */
+.button-menu.active {
+    background: rgba(162, 101, 57, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-weight: bold;
 }
 
-.menu__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+/* Базовые стили для контейнера меню */
+.menu__container.category {
+    display: none; /* Изначально скрываем все категории */
+    
+    /* СЕТКА: строго 4 колонки одинаковой ширины */
+    grid-template-columns: repeat(4, 1fr); 
+    justify-items: center; /* Центрируем карточки внутри своих ячеек */
     gap: 32px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 0;
+
+    /* ПРОКРУТКА УБРАНА: высота теперь подстраивается автоматически */
+    max-height: none;
+    overflow-y: visible;
+
+    /* Анимация плавного появления */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Этот класс делает блок видимым и запускает анимацию */
+.menu__container.category.show {
+    display: grid !important; /* Включаем именно GRID-сетку */
     opacity: 1;
+    transform: translateY(0);
 }
 
-.hidden {
-  opacity: 0;
-  transform: translateY(10px);
-  display: block;
+
+/* Кастомизация скроллбара */
+.menu__container.category::-webkit-scrollbar {
+    width: 6px;
+}
+.menu__container.category::-webkit-scrollbar-track {
+    background: transparent;
+}
+.menu__container.category::-webkit-scrollbar-thumb {
+    background-color: rgba(162, 101, 57, 0.5);
+    border-radius: 10px;
 }
 
+/* КАРТОЧКА ПРОДУКТА */
 .product {
     display: flex;
     flex-direction: column;
@@ -381,10 +589,24 @@ a {
     border-radius: 24px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.14);
     background: rgba(255, 255, 255, 1);
+    overflow: hidden; /* Чтобы картинка не вылезала за радиус скругления */
+}
+
+.product img {
+    width: 100%;
+    height: 276px; /* Фиксируем высоту картинки */
+    object-fit: cover; /* Картинка адаптируется без искажений */
+    background: #DEDEDE;
+}
+
+.product_flat-white {
+    box-sizing: border-box; 
+    padding: 20px;      
+    object-fit: contain;
 }
 
 .product__info {
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -402,6 +624,7 @@ a {
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
+    flex-grow: 1; /* Текст занимает свободное место, выравнивая параметры к низу */
 }
 
 .product__parameter {
@@ -411,6 +634,33 @@ a {
     line-height: 17px;
 }
 
+/* АДАПТИВНОСТЬ */
+@media (max-width: 480px) {
+    .menu__container.category {
+        grid-template-columns: 1fr;
+        max-height: 450px;
+        gap: 16px;
+    }
+    .menu__header {
+        flex-direction: column; /* На мобилках заголовок и кнопки встанут друг под другом */
+        align-items: flex-start;
+    }
+    .menu__buttons {
+        padding-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ОТЗЫВЫ */
 .reviews-block {
     /* height: 100vh; */
     background-color: rgba(246, 245, 244, 1);
@@ -449,10 +699,10 @@ a {
 }
 
 .stars {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 100%;
-  max-width: 150px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    max-width: 150px;
 }
 
 .reviews__text {
@@ -526,7 +776,7 @@ a {
     border-radius: 24px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.14);
     background: rgba(255, 255, 255, 1);
-    
+
 }
 
 .reservation__form {
@@ -615,3 +865,7 @@ a {
     display: flex;
     justify-content: flex-end;
 }
+
+
+
+

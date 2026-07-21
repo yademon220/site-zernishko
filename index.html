@@ -25,7 +25,7 @@
             <a href="#menu" class="nav__link">Меню</a>
             <a href="#reviews" class="nav__link">Отзывы</a>
             <a href="#location" class="nav__link">Контакты</a>
-            <button class="header__button">Связаться</button>
+            <button class="header__button btn-open-modal">Связаться</button>
         </nav>
     </header>
 
@@ -52,6 +52,74 @@
         </div>
     </div>
 
+
+
+
+
+
+
+    <!-- МОДАЛЬНОЕ ОКНО СВЯЗАТЬСЯ -->
+    <!-- <button class="button-menu btn-open-modal">Связаться</button> -->
+
+    <!-- Само модальное окно -->
+    <div id="coffeeModal" class="modal-overlay">
+        <div class="modal-window">
+            <!-- Кнопка закрытия (крестик) -->
+            <button class="modal-close">&times;</button>
+
+            <div class="modal-header">
+                <h2>Давайте пообщаемся! ☕</h2>
+                <p>Оставьте контакты, и мы свяжемся с вами быстрее, чем варится эспрессо.</p>
+            </div>
+
+            <form class="modal-form" onsubmit="event.preventDefault(); alert('Заявка отправлена!');">
+                <div class="form-group">
+                    <label for="modal-name">Ваше имя</label>
+                    <input type="text" id="modal-name" placeholder="Как к вам обращаться?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-phone">Номер телефона</label>
+                    <input type="tel" id="modal-phone" placeholder="+7 (999) 000-00-00" required>
+                </div>
+
+                <!-- Интерактивная кофейная деталь -->
+                <div class="form-group">
+                    <label>Ваше кофейное настроение сейчас:</label>
+                    <div class="coffee-mood-options">
+                        <label class="mood-tab">
+                            <input type="radio" name="mood" value="espresso" checked>
+                            <span>⚡ Бодрый эспрессо</span>
+                        </label>
+                        <label class="mood-tab">
+                            <input type="radio" name="mood" value="cappuccino">
+                            <span>☁️ Нежный капучино</span>
+                        </label>
+                        <label class="mood-tab">
+                            <input type="radio" name="mood" value="iced">
+                            <span>🧊 Освежающий айс</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="modal-submit-btn">Жду звонка</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- О НАС -->
     <div id="aboutUs" class="aboutUs center">
         <h1 class="title">О нас</h1>
         <div class="aboutUs__container">
@@ -111,6 +179,14 @@
         </div>
     </div>
 
+
+
+
+
+
+
+    <!-- МЕНЮ -->
+
     <div id="menu" class="menu center">
         <div class="menu__header">
             <h1 class="title">Меню</h1>
@@ -120,9 +196,11 @@
                 <button class="button__appetizers button-menu" data-category="appetizers">Закуски</button>
             </div>
         </div>
+
+        <!-- Убрали все лишние инлайновые стили, управление через классы -->
         <div class="menu__container category coffee">
             <div class="product">
-                <img src="./img/image-21.png" alt="Капучино">
+                <img src="./img/1-11.png" alt="Капучино">
                 <div class="product__info">
                     <h3 class="product__price">240₽</h3>
                     <p class="product__text">Капучино на миндальном молоке с кокосовым сиропом</p>
@@ -130,23 +208,23 @@
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-22.png" alt="Латте">
+                <img src="./img/1-2.png" alt="Латте">
                 <div class="product__info">
                     <h3 class="product__price">270₽</h3>
-                    <p class="product__text">Латте на кокосовом молокес кленовым сиропом</p>
+                    <p class="product__text">Латте на кокосовом молоке с кленовым сиропом</p>
                     <p class="product__parameter">350 мл</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-23.png" alt="Раф">
+                <img src="./img/1-3.png" alt="Раф">
                 <div class="product__info">
                     <h3 class="product__price">360₽</h3>
-                    <p class="product__text">Раф с карамельным сиропоми шоколадом</p>
+                    <p class="product__text">Раф с карамельным сиропом и шоколадом</p>
                     <p class="product__parameter">250 мл</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-24.png" alt="американо">
+                <img src="./img/1-4.png" alt="американо">
                 <div class="product__info">
                     <h3 class="product__price">160₽</h3>
                     <p class="product__text">Классический американо с зарядом бодрости</p>
@@ -154,7 +232,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-25.png" alt="Флет уайт">
+                <img class="product_flat-white" src="./img/1-5.png" alt="Флет уайт">
                 <div class="product__info">
                     <h3 class="product__price">160₽</h3>
                     <p class="product__text">Флет уайт с насыщенным вкусом эфиопского эспрессо</p>
@@ -162,7 +240,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-26.png" alt="Латте на овсяном молоке">
+                <img src="./img/1-6.png" alt="Латте на овсяном молоке">
                 <div class="product__info">
                     <h3 class="product__price">270₽</h3>
                     <p class="product__text">Латте на овсяном молоке с добавлением корицы</p>
@@ -170,7 +248,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-27.png" alt="Двойной эспрессо">
+                <img src="./img/1-7.png" alt="Двойной эспрессо">
                 <div class="product__info">
                     <h3 class="product__price">180₽</h3>
                     <p class="product__text">Двойной эспрессо с высоким зарядом энергии</p>
@@ -178,7 +256,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-28.png" alt="Капучино на соевом молоке">
+                <img src="./img/1-8.png" alt="Капучино на соевом молоке">
                 <div class="product__info">
                     <h3 class="product__price">240₽</h3>
                     <p class="product__text">Капучино на соевом молоке с ореховым сиропом</p>
@@ -186,139 +264,150 @@
                 </div>
             </div>
         </div>
+
         <div class="menu__container category desserts" style="display: none;">
             <div class="product">
-                <img src="./img/image-21.png" alt="Капучино">
-                <div class="product__info">
-                    <h3 class="product__price">00000₽</h3>
-                    <p class="product__text">Капучино на миндальном молоке с кокосовым сиропом</p>
-                    <p class="product__parameter">350 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-22.png" alt="Латте">
-                <div class="product__info">
-                    <h3 class="product__price">270₽</h3>
-                    <p class="product__text">Латте на кокосовом молокес кленовым сиропом</p>
-                    <p class="product__parameter">350 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-23.png" alt="Раф">
-                <div class="product__info">
-                    <h3 class="product__price">360₽</h3>
-                    <p class="product__text">Раф с карамельным сиропоми шоколадом</p>
-                    <p class="product__parameter">250 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-24.png" alt="американо">
-                <div class="product__info">
-                    <h3 class="product__price">160₽</h3>
-                    <p class="product__text">Классический американо с зарядом бодрости</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-25.png" alt="Флет уайт">
-                <div class="product__info">
-                    <h3 class="product__price">160₽</h3>
-                    <p class="product__text">Флет уайт с насыщенным вкусом эфиопского эспрессо</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-26.png" alt="Латте на овсяном молоке">
-                <div class="product__info">
-                    <h3 class="product__price">270₽</h3>
-                    <p class="product__text">Латте на овсяном молоке с добавлением корицы</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-27.png" alt="Двойной эспрессо">
-                <div class="product__info">
-                    <h3 class="product__price">180₽</h3>
-                    <p class="product__text">Двойной эспрессо с высоким зарядом энергии</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-28.png" alt="Капучино на соевом молоке">
+                <img src="./img/3-1.png" alt="Синабон">
                 <div class="product__info">
                     <h3 class="product__price">240₽</h3>
-                    <p class="product__text">Капучино на соевом молоке с ореховым сиропом</p>
-                    <p class="product__parameter">300 мл</p>
+                    <p class="product__text">Синабон с ароматной корицей и глазурью</p>
+                    <p class="product__parameter">250 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-2.png" alt="датская слойка">
+                <div class="product__info">
+                    <h3 class="product__price">270₽</h3>
+                    <p class="product__text">Воздушная датская слойка с нежным кремом</p>
+                    <p class="product__parameter">250 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-3.png" alt="крем-брюле с ягодами">
+                <div class="product__info">
+                    <h3 class="product__price">360₽</h3>
+                    <p class="product__text">Нежный крем-брюле с ягодами и карамельной корочкой </p>
+                    <p class="product__parameter">150 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-4.png" alt="Улитка с джемом">
+                <div class="product__info">
+                    <h3 class="product__price">270₽</h3>
+                    <p class="product__text">Улитка с яблочно-лимонным джемом и изюмом</p>
+                    <p class="product__parameter">250 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-5.png" alt="Шоколадно-кофейный торт">
+                <div class="product__info">
+                    <h3 class="product__price">160₽</h3>
+                    <p class="product__text">Шоколадно-кофейный торт с глубоким вкусом какао</p>
+                    <p class="product__parameter">170 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-6.png" alt="Шоколадная тарталетка">
+                <div class="product__info">
+                    <h3 class="product__price">180₽</h3>
+                    <p class="product__text">Шоколадная тарталетка с кремом и малиной</p>
+                    <p class="product__parameter">150 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-7.png" alt="медовик">
+                <div class="product__info">
+                    <h3 class="product__price">240₽</h3>
+                    <p class="product__text">Классический медовик со сливочным кремом</p>
+                    <p class="product__parameter">250 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/3-8.png" alt="Торт с нежным кремом">
+                <div class="product__info">
+                    <h3 class="product__price">160₽</h3>
+                    <p class="product__text">Торт с нежным кремом, корицей и шоколадом</p>
+                    <p class="product__parameter">300 гр</p>
                 </div>
             </div>
         </div>
+
         <div class="menu__container category appetizers" style="display: none;">
             <div class="product">
-                <img src="./img/image-21.png" alt="Капучино">
+                <img src="./img/2-1.png" alt="Миндаль">
                 <div class="product__info">
-                    <h3 class="product__price">1111₽</h3>
-                    <p class="product__text">Капучино на миндальном молоке с кокосовым сиропом</p>
-                    <p class="product__parameter">350 мл</p>
+                    <h3 class="product__price">240₽</h3>
+                    <p class="product__text">Миндаль — идеальная закуска для перекуса</p>
+                    <p class="product__parameter">200 гр</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-22.png" alt="Латте">
-                <div class="product__info">
-                    <h3 class="product__price">270₽</h3>
-                    <p class="product__text">Латте на кокосовом молокес кленовым сиропом</p>
-                    <p class="product__parameter">350 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-23.png" alt="Раф">
+                <img src="./img/2-2.png" alt="Печенье с шоколадом">
                 <div class="product__info">
                     <h3 class="product__price">360₽</h3>
-                    <p class="product__text">Раф с карамельным сиропоми шоколадом</p>
-                    <p class="product__parameter">250 мл</p>
+                    <p class="product__text">Классическое печенье с кусочками шоколада</p>
+                    <p class="product__parameter">250 гр</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-24.png" alt="американо">
-                <div class="product__info">
-                    <h3 class="product__price">160₽</h3>
-                    <p class="product__text">Классический американо с зарядом бодрости</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-25.png" alt="Флет уайт">
-                <div class="product__info">
-                    <h3 class="product__price">160₽</h3>
-                    <p class="product__text">Флет уайт с насыщенным вкусом эфиопского эспрессо</p>
-                    <p class="product__parameter">300 мл</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="./img/image-26.png" alt="Латте на овсяном молоке">
+                <img src="./img/2-3.png" alt="Баранки с солью">
                 <div class="product__info">
                     <h3 class="product__price">270₽</h3>
-                    <p class="product__text">Латте на овсяном молоке с добавлением корицы</p>
-                    <p class="product__parameter">300 мл</p>
+                    <p class="product__text">Баранки с легкой солью — отличное дополнение к кофе</p>
+                    <p class="product__parameter">350 гр</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-27.png" alt="Двойной эспрессо">
+                <img src="./img/2-4.png" alt="Булочка с маком">
+                <div class="product__info">
+                    <h3 class="product__price">160₽</h3>
+                    <p class="product__text">Булочка с маком, покрытая нежной сахарной глазурью</p>
+                    <p class="product__parameter">150 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/2-5.png" alt="Кешью">
+                <div class="product__info">
+                    <h3 class="product__price">270₽</h3>
+                    <p class="product__text">Свежий, хрустящий кешью — полезный перекус</p>
+                    <p class="product__parameter">300 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/2-6.png" alt="Мягкое печенье">
+                <div class="product__info">
+                    <h3 class="product__price">160₽</h3>
+                    <p class="product__text">Мягкое печенье с начинкой из шоколада</p>
+                    <p class="product__parameter">150 гр</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/2-7.png" alt="Панкейки">
                 <div class="product__info">
                     <h3 class="product__price">180₽</h3>
-                    <p class="product__text">Двойной эспрессо с высоким зарядом энергии</p>
-                    <p class="product__parameter">300 мл</p>
+                    <p class="product__text">Нежные панкейки с сладким медом и маслом</p>
+                    <p class="product__parameter">300 гр</p>
                 </div>
             </div>
             <div class="product">
-                <img src="./img/image-28.png" alt="Капучино на соевом молоке">
+                <img src="./img/2-8.png" alt="Сырные треугольники">
                 <div class="product__info">
                     <h3 class="product__price">240₽</h3>
                     <p class="product__text">Капучино на соевом молоке с ореховым сиропом</p>
-                    <p class="product__parameter">300 мл</p>
+                    <p class="product__parameter">250 гр</p>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <!-- ОТЗЫВЫ -->
+
 
     <div id="reviews" class="reviews-block center">
         <h1 class="title">Отзывы</h1>
@@ -796,41 +885,72 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.button-menu');
-            const products = document.querySelectorAll('.product.category');
+            const containers = document.querySelectorAll('.menu__container.category');
+            const menuBlock = document.getElementById('menu');
 
-            // Функция для показа товаров определённой категории
-            function showCategory(category) {
-                products.forEach(product => {
-                    if (product.classList.contains(category)) {
-                        product.classList.remove('hidden');
+            // ЕДИНАЯ функция для показа категории, подсветки кнопок и анимации fade-in
+            function showCategory(category, clickedButton = null) {
+                containers.forEach(container => {
+                    if (container.classList.contains(category)) {
+                        container.style.display = 'grid'; // Включаем сетку
+
+                        // Анимация плавного появления
+                        setTimeout(() => {
+                            container.classList.add('show');
+                        }, 20);
+
+                        // Сброс внутреннего скролла наверх
+                        container.scrollTop = 0;
                     } else {
-                        product.classList.add('hidden');
+                        container.style.display = 'none';
+                        container.classList.remove('show');
+                    }
+                });
+
+                // Управляем подсветкой кнопок
+                buttons.forEach(button => {
+                    if (clickedButton) {
+                        button.classList.toggle('active', button === clickedButton);
+                    } else {
+                        button.classList.toggle('active', button.getAttribute('data-category') === category);
                     }
                 });
             }
 
-            // Обработчик клика по кнопкам
+            // Обработчик клика по кнопкам категорий меню
             buttons.forEach(button => {
                 button.addEventListener('click', function () {
                     const category = this.getAttribute('data-category');
-                    showCategory(category);
+
+                    // Переключаем контент
+                    showCategory(category, this);
+
+                    // Плавная прокрутка к началу блока меню при нажатии
+                    if (menuBlock) {
+                        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                        const offset = menuBlock.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
 
-            // Показываем кофе по умолчанию при загрузке страницы
+            // Инициализация: показываем кофе по умолчанию при загрузке страницы
             showCategory('coffee');
         });
 
-
+        // Плавный скролл для якорных ссылок меню навигации (например, из шапки сайта)
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', e => {
-                e.preventDefault(); // <-- ВАЖНО: отменяем стандартное поведение браузера
-
+                e.preventDefault();
                 const targetId = link.getAttribute('href');
                 const target = document.querySelector(targetId);
 
                 if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
                     const offset = target.offsetTop - headerHeight;
 
                     window.scrollTo({
@@ -841,7 +961,46 @@
             });
         });
 
+
+
+
+
+
+        // МОДАЛЬНОЕ ОКНО СВЯЗАТЬСЯ
+        // Находим элементы модального окна
+        const modal = document.getElementById('coffeeModal');
+        const openModalBtn = document.querySelector('.btn-open-modal');
+        const closeModalBtn = document.querySelector('.modal-close');
+
+        // Функция открытия окна
+        if (openModalBtn && modal) {
+            openModalBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта под модальным окном
+            });
+        }
+
+        // Функция закрытия окна
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Возвращаем скролл сайту
+        }
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+
+        // Закрытие при клике на серую область вокруг окна
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
     </script>
+
 
 </body>
 
